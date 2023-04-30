@@ -11,6 +11,6 @@ export function getRoute(route: FRONT_END_ROUTES) {
   if (process.env.NODE_ENV === "development") {
     return route;
   } else {
-    return `/j_gagnep/ericletourneau${route}`;
+    return `${route}`;
   }
 }
