@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_header_4s",
+  "info": {
+    "displayName": "Header 4",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  }
+}

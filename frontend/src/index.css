@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    font-family: system-ui, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.content-container {
+  min-height: calc(100vh - theme("spacing.24"));
+}
