@@ -18,5 +18,9 @@
     "url": "https://github.com/Justinette2175/score-association-website/issues"
   },
   "homepage": "https://github.com/Justinette2175/score-association-website#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  }
 }
