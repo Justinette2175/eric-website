@@ -28,5 +28,6 @@ yarn-error.log*
 /frontend/.env.development
 /frontend/node_modules
 /backend/.env
+/backend/.env.
 /backend/node_modules
 

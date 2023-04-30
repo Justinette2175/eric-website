@@ -16,13 +16,13 @@
     "@strapi/provider-upload-aws-s3": "^4.3.9",
     "@strapi/provider-upload-cloudinary": "^4.3.9",
     "@strapi/strapi": "4.3.9",
-    "pg": "^8.6.0",
+    "pg": "^8.10.0",
     "pg-connection-string": "^2.5.0",
     "strapi-plugin-import-export-entries": "^1.16.0",
     "strapi-plugin-react-editorjs": "^2.0.2"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "A Strapi developeuse"
   },
   "strapi": {
     "uuid": "d46f6d1f-9435-4dcd-be67-eaae1ce58867"
