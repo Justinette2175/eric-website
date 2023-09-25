@@ -1,4 +1,4 @@
-import { PropsWithChildren, useMemo } from "react";
+import { PropsWithChildren } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAnArchiveTypesQuery } from "../ReactQuery/anArchiveTypes.queries";
 import { usePublicationTypesQuery } from "../ReactQuery/publicationTypes.queries";
@@ -9,6 +9,7 @@ type SideMenuItemProps = {
   link: string;
   level?: 1 | 2;
   active?: boolean;
+  closeMenu: () => void;
 };
 
 export function SideMenuItem({
@@ -16,7 +17,8 @@ export function SideMenuItem({
   link,
   children,
   level,
-  active
+  active,
+  closeMenu
 }: PropsWithChildren<SideMenuItemProps>) {
   return (
     <div
@@ -27,6 +29,7 @@ export function SideMenuItem({
       <Link
         to={link}
         className={`block ${level === 2 ? "text-md" : "text-lg"} `}
+        onClick={closeMenu}
       >
         {label}
       </Link>
@@ -35,17 +38,18 @@ export function SideMenuItem({
   );
 }
 
-export function SideMenu() {
+export function SideMenu({ closeMenu }: { closeMenu: () => void }) {
   const { data: publicationTypes } = usePublicationTypesQuery();
   const { data: anarchiveTypes } = useAnArchiveTypesQuery();
   const location = useLocation();
 
   return (
-    <div className="grid grid-auto-column gap-6 w-full text-right">
+    <div className="grid grid-auto-column gap-6 w-full md:text-right">
       <SideMenuItem
         link={getRoute(FRONT_END_ROUTES.home)}
         label="Accueil"
         active={location.pathname === FRONT_END_ROUTES.home}
+        closeMenu={closeMenu}
       />
       <div>
         <SideMenuItem
@@ -55,6 +59,7 @@ export function SideMenu() {
           }
           link={getRoute(FRONT_END_ROUTES.anArchives)}
           label="An-archives"
+          closeMenu={closeMenu}
         />
         {anarchiveTypes?.map((type) => (
           <SideMenuItem
@@ -66,6 +71,7 @@ export function SideMenu() {
             }
             label={type.name || ""}
             level={2}
+            closeMenu={closeMenu}
           />
         ))}
       </div>
@@ -78,6 +84,7 @@ export function SideMenu() {
           }
           link={getRoute(FRONT_END_ROUTES.publications)}
           label="Publications"
+          closeMenu={closeMenu}
         ></SideMenuItem>
 
         {publicationTypes?.map((type) => (
@@ -90,6 +97,7 @@ export function SideMenu() {
             }
             label={type.name || ""}
             level={2}
+            closeMenu={closeMenu}
           />
         ))}
       </div>
@@ -98,18 +106,21 @@ export function SideMenu() {
         link={getRoute(FRONT_END_ROUTES.academique)}
         active={location.pathname === FRONT_END_ROUTES.academique}
         label="Académique"
+        closeMenu={closeMenu}
       />
 
       <SideMenuItem
         link={getRoute(FRONT_END_ROUTES.presse)}
         label="Presse"
         active={location.pathname === FRONT_END_ROUTES.presse}
+        closeMenu={closeMenu}
       />
 
       <SideMenuItem
         link={getRoute(FRONT_END_ROUTES.contact)}
         label="Contact"
         active={location.pathname === FRONT_END_ROUTES.contact}
+        closeMenu={closeMenu}
       />
     </div>
   );

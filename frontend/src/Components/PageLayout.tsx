@@ -13,7 +13,7 @@ export function PageLayout({
   return (
     <React.Fragment>
       <Helmet title={title || ""} />
-      <div className="px-8 grid grid-flow-row gap-12 max-w-4xl">
+      <div className="grid grid-flow-row gap-8 md:gap-12 max-w-4xl">
         {title && <PageTitle title={title} />}
         <div>{children}</div>
       </div>

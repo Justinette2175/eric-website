@@ -11,11 +11,11 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/plugin-i18n": "4.3.9",
-    "@strapi/plugin-users-permissions": "4.3.9",
+    "@strapi/plugin-i18n": "^4.3.9",
+    "@strapi/plugin-users-permissions": "^4.3.9",
     "@strapi/provider-upload-aws-s3": "^4.3.9",
     "@strapi/provider-upload-cloudinary": "^4.3.9",
-    "@strapi/strapi": "4.3.9",
+    "@strapi/strapi": "^4.3.9",
     "pg": "^8.10.0",
     "pg-connection-string": "^2.5.0",
     "strapi-plugin-import-export-entries": "^1.16.0",
@@ -28,8 +28,7 @@
     "uuid": "d46f6d1f-9435-4dcd-be67-eaae1ce58867"
   },
   "engines": {
-    "node": ">=14.19.1 <=18.x.x",
-    "npm": ">=6.0.0"
+    "node": "16.x"
   },
   "license": "MIT"
 }

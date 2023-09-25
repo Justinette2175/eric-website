@@ -19,7 +19,6 @@
     "url": "https://github.com/Justinette2175/score-association-website/issues"
   },
   "homepage": "https://github.com/Justinette2175/score-association-website#readme",
-  "dependencies": {},
   "engines": {
     "node": "16.4.2"
   }
