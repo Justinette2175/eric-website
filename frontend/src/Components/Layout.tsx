@@ -15,7 +15,7 @@ export function Layout({ children }: PropsWithChildren) {
         <div className="h-32 mt-8 flex justify-between">
           <Header />
           <div className="md:hidden">
-            <button className="pb-2 pl-2" onClick={() => setIsMenuOpen(false)}>
+            <button className="pb-2 pl-8" onClick={() => setIsMenuOpen(false)}>
               X
             </button>
           </div>
